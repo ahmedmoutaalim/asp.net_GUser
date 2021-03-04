@@ -1,0 +1,53 @@
+﻿@model crudApp.Models.EtudiantInfo
+@{
+    ViewData["Title"] = "Delete";
+   
+}
+
+<h1>Delete</h1>
+
+<div>
+    <h4>Etudiant Information</h4>
+
+    <hr />
+
+    <dl class="dl-Horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nom)
+        </dt>
+        <dt>
+            @Html.DisplayFor(model => model.Nom)
+        </dt>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prenom)
+        </dt>
+        <dt>
+            @Html.DisplayFor(model => model.Prenom)
+        </dt>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cin)
+        </dt>
+        <dt>
+            @Html.DisplayFor(model => model.Cin)
+        </dt>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adress)
+        </dt>
+        <dt>
+            @Html.DisplayFor(model => model.Adress)
+        </dt>
+    </dl>
+
+    <form  asp-action="Delete">
+        <input type="hidden" asp-for="ID" />
+        <input type="submit" value="Delete" class="btn btn-danger"  />
+        <a asp-action="Index"> Back </a>
+    </form>
+</div>
+

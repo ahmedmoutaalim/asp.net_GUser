@@ -1,0 +1,64 @@
+﻿@model IEnumerable<crudApp.Models.EtudiantInfo>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<h1>Index</h1>
+
+<p>
+    
+    <a asp-action="Create"> Creat new </a>
+</p>
+
+@* For display Etudiant info *@
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(Model => Model.Nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.Prenom)
+                
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.Cin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.Adress)
+            </th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var etd in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => etd.Nom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => etd.Prenom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => etd.Cin)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => etd.Adress)
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@etd.ID">Edit</a>
+                    <a asp-action="Details" asp-route-id="@etd.ID">Details</a>
+                    <a asp-action="Delete" asp-route-id="@etd.ID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

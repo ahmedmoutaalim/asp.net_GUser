@@ -1,0 +1,45 @@
+﻿@model crudApp.Models.EtudiantInfo
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Etudiant Information</h4>
+
+    <hr />
+
+    <dl class="dl-Horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nom) : @Html.DisplayFor(model => model.Nom)
+        </dt>
+       
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prenom) : @Html.DisplayFor(model => model.Prenom)
+        </dt>
+       
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cin) : @Html.DisplayFor(model => model.Cin)
+        </dt>
+     
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adress) : @Html.DisplayFor(model => model.Adress)
+        </dt>
+     
+    </dl>
+
+</div>
+
+<div >
+
+    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a>
+    <a asp-action="Index"  > Back</a>
+</div>
